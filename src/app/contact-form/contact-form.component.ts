@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-contact-form',
@@ -16,6 +16,9 @@ export class ContactFormComponent {
 
   onSubmit() {
     // Exibe uma mensagem no console apenas como exemplo
-    console.log("Formulário enviado:", this.name, this.email, this.message);
+    if (this.name && this.email && this.message) {
+      console.log('Formulário enviado:', this.name, this.email, this.message);
+      alert('Formulário enviado com sucesso!');
+    }      
   }
 }
